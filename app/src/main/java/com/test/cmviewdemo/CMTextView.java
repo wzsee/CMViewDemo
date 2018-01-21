@@ -8,13 +8,14 @@ import android.graphics.Rect;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.TypedValue;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 /**
  * Created by CMMY on 2018/1/19.
  */
 
-public class CMTextView extends TextView {
+public class CMTextView extends LinearLayout {
 
 
     private int mCmTextColor;
