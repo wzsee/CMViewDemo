@@ -2,10 +2,12 @@ package com.test.cmviewdemo;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.widget.TextView;
 
 /**
@@ -17,7 +19,7 @@ public class CMTextView extends TextView {
 
     private int mCmTextColor;
     private String mCmText;
-    private int mCmTextSiZe;
+    private int mCmTextSiZe = 15;
 
     private Paint cmPaint;
 
@@ -36,7 +38,7 @@ public class CMTextView extends TextView {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.CMTextView);
         mCmText = typedArray.getString(R.styleable.CMTextView_cmText);
         mCmTextColor = typedArray.getColor(R.styleable.CMTextView_cmTextColor,mCmTextColor);
-        mCmTextSiZe = typedArray.getDimensionPixelOffset(R.styleable.CMTextView_cmTextSize,mCmTextSiZe);
+        mCmTextSiZe = typedArray.getDimensionPixelOffset(R.styleable.CMTextView_cmTextSize,spToPx(mCmTextSiZe));
         //回收
         typedArray.recycle();
 
@@ -44,6 +46,15 @@ public class CMTextView extends TextView {
         cmPaint.setAntiAlias(true);
         cmPaint.setColor(mCmTextColor);
         cmPaint.setTextSize(mCmTextSiZe);
+    }
+
+    /**
+     * sp 与 px 转换
+     * @param sp
+     * @return
+     */
+    private int spToPx(int sp) {
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,sp,getResources().getDisplayMetrics());
     }
 
     /**
@@ -65,14 +76,30 @@ public class CMTextView extends TextView {
         if(MeasureSpec.AT_MOST == heigthMode){
             Rect bounds = new Rect();
             cmPaint.getTextBounds(mCmText,0,mCmText.length(),bounds);
-            height = bounds.height();
+            height = bounds.height() + getPaddingBottom() + getPaddingTop();
         }
 
         if(MeasureSpec.AT_MOST == widthMode){
             Rect bounds = new Rect();
             cmPaint.getTextBounds(mCmText,0,mCmText.length(),bounds);
-            width = bounds.width();
+            width = bounds.width() + getPaddingLeft() + getPaddingRight();
         }
 
+        setMeasuredDimension(width,height);
+    }
+
+    /**
+     * @param canvas
+     */
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        //计算基线
+        Paint.FontMetricsInt fontMetricsInt = cmPaint.getFontMetricsInt();
+        int dy = (fontMetricsInt.bottom - fontMetricsInt.top)/2 - fontMetricsInt.bottom;
+        int baseLine = getHeight()/2 + dy;
+        int x = getPaddingLeft();
+        // x: 开始的位置  y：基线
+        canvas.drawText(mCmText,x,baseLine,cmPaint);
     }
 }

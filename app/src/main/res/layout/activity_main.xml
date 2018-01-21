@@ -15,10 +15,10 @@
         <com.test.cmviewdemo.CMTextView
             android:background="@color/colorAccent"
             app:cmTextColor="@color/colorPrimary"
-            app:cmTextSize="20sp"
             app:cmText="@string/app_name"
-            android:layout_width="100dp"
-            android:layout_height="20dp"/>
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 
