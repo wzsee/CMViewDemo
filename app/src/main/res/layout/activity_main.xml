@@ -13,12 +13,74 @@
         android:orientation="vertical">
 
         <com.test.cmviewdemo.CMTextView
-            android:background="@color/colorAccent"
-            app:cmTextColor="@color/colorPrimary"
-            app:cmText="@string/app_name"
-            android:padding="10dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:padding="10dp"
+            app:cmText="@string/app_name"
+            app:cmTextColor="@color/colorPrimary"
+            app:cmTextSize="20sp" />
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.test.cmviewdemo.QQStyepView
+                android:id="@+id/main_qqstep"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                app:cmInnerColor="@color/colorAccent"
+                app:cmOuterColor="@color/colorPrimary"
+                app:cmStepTextColor="@color/colorPrimary"
+                app:cmStepTextSize="20sp" />
+
+            <EditText
+                android:id="@+id/main_qqstep_et"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/main_qqstep_bt"
+                android:text="START"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.test.cmviewdemo.ColorTrackTextView
+                android:text="@string/app_name"
+                android:id="@+id/main_TrackTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textSize="22sp"
+                app:cmChangeTextColor="@color/colorAccent"
+                app:cmOriginTextColor="@color/colorPrimary" />
+
+            <Button
+                android:id="@+id/main_left_to_right"
+                android:text="L_T_R"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/main_right_to_left"
+                android:text="R_T_L"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

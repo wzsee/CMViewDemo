@@ -8,14 +8,14 @@ import android.graphics.Rect;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.TypedValue;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.support.v7.widget.AppCompatTextView;
+
 
 /**
  * Created by CMMY on 2018/1/19.
  */
 
-public class CMTextView extends LinearLayout {
+public class CMTextView extends AppCompatTextView {
 
 
     private int mCmTextColor;
@@ -48,7 +48,6 @@ public class CMTextView extends LinearLayout {
         cmPaint.setColor(mCmTextColor);
         cmPaint.setTextSize(mCmTextSiZe);
     }
-
     /**
      * sp 与 px 转换
      * @param sp
@@ -87,6 +86,7 @@ public class CMTextView extends LinearLayout {
         }
 
         setMeasuredDimension(width,height);
+
     }
 
     /**
@@ -103,4 +103,5 @@ public class CMTextView extends LinearLayout {
         // x: 开始的位置  y：基线
         canvas.drawText(mCmText,x,baseLine,cmPaint);
     }
+
 }
