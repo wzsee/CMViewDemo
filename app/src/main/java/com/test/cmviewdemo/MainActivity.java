@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     private ColorTrackTextView colorTrackTextView;
     private Button leftToRight;
     private Button rightToLeft;
+    private Button main_step_bt;
+    private EditText main_step_et;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,20 +81,34 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initQQStep() {
+        main_step_et = findViewById(R.id.main_qqstep_et);
+        final String currentText = main_step_et.getText().toString();
+        main_step_bt = findViewById(R.id.main_qqstep_bt);
         cmMainQQStep = findViewById(R.id.main_qqstep);
         //1.设置最大步数
         cmMainQQStep.setMaxStep(4000);
-        //2.添加属性动画
-        ValueAnimator valueAnimator = ObjectAnimator.ofFloat(0, 3369);
-        valueAnimator.setDuration(1000);
-        valueAnimator.setInterpolator(new DecelerateInterpolator());
-        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+
+        main_step_bt.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                float animatedValue = (float) animation.getAnimatedValue();
-                cmMainQQStep.setStepProgress((int) animatedValue);
+            public void onClick(View v) {
+//                if(main_step_et == null){
+//                    Toast.makeText(getApplicationContext(),"请输入步数",Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
+                //2.添加属性动画
+                ValueAnimator valueAnimator = ObjectAnimator.ofFloat(0, 3269);
+                valueAnimator.setDuration(1000);
+                valueAnimator.setInterpolator(new DecelerateInterpolator());
+                valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                    @Override
+                    public void onAnimationUpdate(ValueAnimator animation) {
+                        float animatedValue = (float) animation.getAnimatedValue();
+                        cmMainQQStep.setStepProgress((int) animatedValue);
+                    }
+                });
+                valueAnimator.start();
+
             }
         });
-        valueAnimator.start();
     }
 }
