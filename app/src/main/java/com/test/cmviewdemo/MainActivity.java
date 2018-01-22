@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         //1.设置最大步数
         cmMainQQStep.setMaxStep(4000);
         //2.添加属性动画
-        ValueAnimator valueAnimator = ObjectAnimator.ofFloat(0, 3000);
+        ValueAnimator valueAnimator = ObjectAnimator.ofFloat(0, 3369);
         valueAnimator.setDuration(1000);
         valueAnimator.setInterpolator(new DecelerateInterpolator());
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
