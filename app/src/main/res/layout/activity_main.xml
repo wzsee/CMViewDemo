@@ -12,6 +12,12 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
         <com.test.cmviewdemo.CMTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -20,6 +26,14 @@
             app:cmText="@string/app_name"
             app:cmTextColor="@color/colorPrimary"
             app:cmTextSize="20sp" />
+
+            <Button
+                android:id="@+id/main_viewpager_bt"
+                android:text="ViewPager"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
 
         <LinearLayout
             android:gravity="center_vertical"

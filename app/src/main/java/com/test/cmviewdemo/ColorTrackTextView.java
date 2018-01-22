@@ -38,8 +38,6 @@ public class ColorTrackTextView extends AppCompatTextView {
 
     public ColorTrackTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-
-
         //创建画笔
         initPaint(context,attrs);
     }
@@ -63,7 +61,7 @@ public class ColorTrackTextView extends AppCompatTextView {
      */
     @Override
     protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
+//        super.onDraw(canvas);
 
         //根据当前进度，获取当前中间值
         int middle = (int) (cmCurrentProgress * getWidth());
@@ -90,14 +88,16 @@ public class ColorTrackTextView extends AppCompatTextView {
      */
     private void drawText(Canvas canvas, Paint textPaint, int start, int end) {
 
-        //获取文字
-        String text = getText().toString();
+
 
         //保存画布状态
         canvas.save();
 
         Rect rect = new Rect(start,0,end,getHeight());
         canvas.clipRect(rect);
+
+        //获取文字
+        String text = getText().toString();
 
         Rect bounds = new Rect();
         textPaint.getTextBounds(text,0,text.length(),bounds);
@@ -151,7 +151,6 @@ public class ColorTrackTextView extends AppCompatTextView {
      */
     public synchronized  void setCurrentProgress(float currentProgress){
         this.cmCurrentProgress = currentProgress;
-
         invalidate();
     }
 

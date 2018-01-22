@@ -2,6 +2,7 @@ package com.test.cmviewdemo;
 
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,8 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.test.cmfragment.CMViewPageActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +31,21 @@ public class MainActivity extends AppCompatActivity {
 
         initColorTrackView();
 
+        initViewPager();
+
+    }
+
+
+    private void initViewPager() {
+        Button main_viewpager_bt = findViewById(R.id.main_viewpager_bt);
+        main_viewpager_bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent  = new Intent();
+                intent.setClass(MainActivity.this,CMViewPageActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 

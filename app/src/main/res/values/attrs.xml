@@ -17,9 +17,5 @@
         <attr name="cmStepTextColor" format="color"></attr>
     </declare-styleable>
 
-    <declare-styleable name="ColorTrackTextView">
-        <attr name="cmOriginTextColor" format="color"></attr>
-        <attr name="cmChangeTextColor" format="color"></attr>
-    </declare-styleable>
 
 </resources>
