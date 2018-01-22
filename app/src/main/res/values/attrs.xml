@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--自定义TextView-->
     <declare-styleable name="CMTextView">
         <attr name="cmTextColor" format="color"></attr>
         <attr name="cmText" format="string"></attr>
@@ -7,6 +8,7 @@
         <attr name="cmTextMaxLength" format="integer"></attr>
     </declare-styleable>
 
+    <!--仿QQ运动步数进度效果-->
     <declare-styleable name="QQStyepView">
         <attr name="cmOuterColor" format="color"></attr>
         <attr name="cmInnerColor" format="color"></attr>
@@ -15,5 +17,9 @@
         <attr name="cmStepTextColor" format="color"></attr>
     </declare-styleable>
 
+    <declare-styleable name="ColorTrackTextView">
+        <attr name="cmOriginTextColor" format="color"></attr>
+        <attr name="cmChangeTextColor" format="color"></attr>
+    </declare-styleable>
 
 </resources>
