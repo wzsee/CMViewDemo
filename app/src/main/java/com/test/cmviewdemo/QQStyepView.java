@@ -115,9 +115,6 @@ public class QQStyepView extends View {
         heigth = width>heigth? heigth: width;
         width = width>heigth? heigth:width;
 
-        heigth = heigth + getPaddingBottom() + getPaddingTop();
-        width = width + getPaddingLeft() + getPaddingRight();
-
         setMeasuredDimension(heigth,width);
     }
 
