@@ -15,10 +15,22 @@
         <com.test.cmviewdemo.CMTextView
             android:background="@color/colorAccent"
             app:cmTextColor="@color/colorPrimary"
+            android:padding="10dp"
             app:cmTextSize="20sp"
             app:cmText="@string/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.test.cmviewdemo.QQStyepView
+            android:layout_margin="10dp"
+            android:id="@+id/main_qqstep"
+            android:padding="10dp"
+            app:cmOuterColor="@color/colorPrimary"
+            app:cmInnerColor="@color/colorAccent"
+            app:cmStepTextColor="@color/colorPrimary"
+            app:cmStepTextSize="20sp"
             android:layout_width="100dp"
-            android:layout_height="20dp"/>
+            android:layout_height="100dp" />
 
     </LinearLayout>
 

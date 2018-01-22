@@ -6,4 +6,14 @@
         <attr name="cmTextSize" format="dimension"></attr>
         <attr name="cmTextMaxLength" format="integer"></attr>
     </declare-styleable>
+
+    <declare-styleable name="QQStyepView">
+        <attr name="cmOuterColor" format="color"></attr>
+        <attr name="cmInnerColor" format="color"></attr>
+        <attr name="cmBorderWidth" format="dimension"></attr>
+        <attr name="cmStepTextSize" format="dimension"></attr>
+        <attr name="cmStepTextColor" format="color"></attr>
+    </declare-styleable>
+
+
 </resources>
