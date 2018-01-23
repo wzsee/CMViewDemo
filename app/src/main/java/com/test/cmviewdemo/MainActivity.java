@@ -33,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
 
         initViewPager();
 
+        initProgressView();
+
+        initCMShapeView();
+
+
     }
 
 
@@ -41,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
         main_viewpager_bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent  = new Intent();
-                intent.setClass(MainActivity.this,CMViewPageActivity.class);
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, CMViewPageActivity.class);
                 startActivity(intent);
             }
         });
@@ -128,5 +133,60 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+
+    private void initProgressView() {
+        Button main_progress_bt = findViewById(R.id.main_cmProgress_start_bt);
+        final CMProgressView main_progress_cmProgressView = findViewById(R.id.main_cmProgress_cmProgressView);
+        main_progress_cmProgressView.setProgressMas(150);
+        main_progress_bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ValueAnimator valueAnimator = ObjectAnimator.ofFloat(0, 90);
+                valueAnimator.setDuration(2000);
+                valueAnimator.setInterpolator(new DecelerateInterpolator());
+                valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                    @Override
+                    public void onAnimationUpdate(ValueAnimator animation) {
+                        float animatedValue = (float) animation.getAnimatedValue();
+                        main_progress_cmProgressView.setProgressCurrent((int) animatedValue);
+                    }
+                });
+                valueAnimator.start();
+            }
+        });
+    }
+
+
+    private void initCMShapeView() {
+        final CMShapeView main_CMShapeView_CMShapeView = findViewById(R.id.main_cmShape_CMShape);
+        Button main_CMShapeView_bt = findViewById(R.id.main_cmShape_bt);
+        main_CMShapeView_bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        while (true) {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    main_CMShapeView_CMShapeView.exChange();
+                                }
+                            });
+                            try {
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                }).start();
+
+            }
+        });
+
     }
 }

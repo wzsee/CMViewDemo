@@ -96,6 +96,51 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.test.cmviewdemo.CMProgressView
+                android:id="@+id/main_cmProgress_cmProgressView"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                app:cmProgressBorderWidth="10dp"
+                app:cmProgressInnerColor="@color/colorAccent"
+                app:cmProgressOuterColor="@color/colorPrimary"
+                app:cmProgressTextColor="@color/colorAccent"
+                app:cmProgressTextSize="20sp"
+                android:layout_width="100dp"
+                android:layout_height="100dp" />
+
+            <Button
+                android:text="START"
+                android:id="@+id/main_cmProgress_start_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.test.cmviewdemo.CMShapeView
+                android:id="@+id/main_cmShape_CMShape"
+                android:layout_margin="10dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+
+            <Button
+                android:id="@+id/main_cmShape_bt"
+                android:text="START"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

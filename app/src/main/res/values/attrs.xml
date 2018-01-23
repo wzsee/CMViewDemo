@@ -18,4 +18,17 @@
     </declare-styleable>
 
 
+    <declare-styleable name="ColorTrackTextView">
+        <attr name="cmChangeTextColor" format="color"></attr>
+        <attr name="cmOriginTextColor" format="color"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="CMProgressView">
+        <attr name="cmProgressOuterColor" format="color"></attr>
+        <attr name="cmProgressInnerColor" format="color"></attr>
+        <attr name="cmProgressBorderWidth" format="dimension"></attr>
+        <attr name="cmProgressTextSize" format="dimension"></attr>
+        <attr name="cmProgressTextColor" format="color"></attr>
+    </declare-styleable>
+
 </resources>
