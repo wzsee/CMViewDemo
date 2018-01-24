@@ -30,5 +30,11 @@
         <attr name="cmProgressTextSize" format="dimension"></attr>
         <attr name="cmProgressTextColor" format="color"></attr>
     </declare-styleable>
+    
+    <declare-styleable name="CMRatingBarView">
+        <attr name="cmRatingBarStartNormal" format="reference"></attr>
+        <attr name="cmRatingBarStartFocus" format="reference"></attr>
+        <attr name="cmRatingBarGradeNumber" format="integer"></attr>
+    </declare-styleable>
 
 </resources>

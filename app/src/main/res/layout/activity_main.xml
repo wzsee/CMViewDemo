@@ -141,6 +141,27 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.test.cmviewdemo.CMRatingBarView
+                android:padding="5dp"
+                android:background="@color/colorAccent"
+                app:cmRatingBarGradeNumber="5"
+                app:cmRatingBarStartFocus="@mipmap/star_selected"
+                app:cmRatingBarStartNormal="@mipmap/star_normal"
+                android:id="@+id/main_cmShape_CMRatingBar"
+                android:layout_margin="10dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+
+
+        </LinearLayout>
+
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
