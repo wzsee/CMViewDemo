@@ -36,5 +36,12 @@
         <attr name="cmRatingBarStartFocus" format="reference"></attr>
         <attr name="cmRatingBarGradeNumber" format="integer"></attr>
     </declare-styleable>
+    
+    <declare-styleable name="CMLetterSiderView">
+        <attr name="cmLetterSiderChooseTextColor" format="color"></attr>
+        <attr name="cmLetterSiderChooseTextSize" format="dimension"></attr>
+        <attr name="cmLetterSiderNormalTextColor" format="color"></attr>
+        <attr name="cmLetterSiderNormalTextSize" format="dimension"></attr>
+    </declare-styleable>
 
 </resources>
