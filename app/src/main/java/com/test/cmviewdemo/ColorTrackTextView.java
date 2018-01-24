@@ -61,7 +61,6 @@ public class ColorTrackTextView extends AppCompatTextView {
      */
     @Override
     protected void onDraw(Canvas canvas) {
-//        super.onDraw(canvas);
 
         //根据当前进度，获取当前中间值
         int middle = (int) (cmCurrentProgress * getWidth());
@@ -87,8 +86,6 @@ public class ColorTrackTextView extends AppCompatTextView {
      * @param end
      */
     private void drawText(Canvas canvas, Paint textPaint, int start, int end) {
-
-
 
         //保存画布状态
         canvas.save();

@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.test.cmfragment.CMViewPageActivity;
+import com.test.cmletterview.CMLetterSiderVieActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,8 +38,10 @@ public class MainActivity extends AppCompatActivity {
 
         initCMShapeView();
 
+        startCMLetterSiderViewActivity();
 
     }
+
 
 
     private void initViewPager() {
@@ -189,4 +192,19 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+    private void startCMLetterSiderViewActivity() {
+
+        Button cmLetterSiderActivityBt = findViewById(R.id.main_cmlettersider_bt);
+
+        cmLetterSiderActivityBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, CMLetterSiderVieActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
 }

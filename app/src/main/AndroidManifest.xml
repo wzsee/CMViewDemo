@@ -16,8 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
-        <activity android:name="com.test.cmfragment.CMViewPageActivity"></activity>
+        <activity android:name="com.test.cmfragment.CMViewPageActivity"/>
+        <activity android:name="com.test.cmletterview.CMLetterSiderVieActivity">
+        </activity>
     </application>
 
 </manifest>
