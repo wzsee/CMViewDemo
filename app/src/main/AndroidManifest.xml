@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.test.cmviewdemo">
+    package="com.test.cmviewdemo">
 
     <application
         android:allowBackup="true"
@@ -11,14 +11,14 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.test.cmfragment.CMViewPageActivity"/>
-        <activity android:name="com.test.cmletterview.CMLetterSiderVieActivity">
-        </activity>
+        <activity android:name="com.test.cmfragment.CMViewPageActivity" />
+        <activity android:name="com.test.cmletterview.CMLetterSiderViewActivity"></activity>
+        <activity android:name="com.test.cmtablayoutview.CMTabLayoutViewActivity"></activity>
     </application>
 
 </manifest>

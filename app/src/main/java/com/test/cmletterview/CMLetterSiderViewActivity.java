@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.test.cmviewdemo.R;
 
-public class CMLetterSiderVieActivity extends AppCompatActivity {
+public class CMLetterSiderViewActivity extends AppCompatActivity {
 
     private TextView mSiderTextTv;
     private CMLetterSiderView mSiderView;

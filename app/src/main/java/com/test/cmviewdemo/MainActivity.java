@@ -9,10 +9,9 @@ import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.test.cmfragment.CMViewPageActivity;
-import com.test.cmletterview.CMLetterSiderVieActivity;
+import com.test.cmletterview.CMLetterSiderViewActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -201,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this, CMLetterSiderVieActivity.class);
+                intent.setClass(MainActivity.this, CMLetterSiderViewActivity.class);
                 startActivity(intent);
             }
         });
