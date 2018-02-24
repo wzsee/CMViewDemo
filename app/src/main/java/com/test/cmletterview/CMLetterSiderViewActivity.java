@@ -15,7 +15,7 @@ public class CMLetterSiderViewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cmletter_sider_vie);
+        setContentView(R.layout.activity_cmletter_sider_view);
 
         initView();
 

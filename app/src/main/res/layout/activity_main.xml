@@ -1,182 +1,202 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.test.cmviewdemo.MainActivity">
 
-    <LinearLayout
+    <ScrollView
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
         <LinearLayout
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <com.test.cmviewdemo.CMTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/colorAccent"
-            android:padding="10dp"
-            app:cmText="@string/app_name"
-            app:cmTextColor="@color/colorPrimary"
-            app:cmTextSize="20sp" />
-
-            <Button
-                android:id="@+id/main_viewpager_bt"
-                android:text="ViewPager"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <com.test.cmviewdemo.QQStyepView
-                android:id="@+id/main_qqstep"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_margin="10dp"
-                android:padding="10dp"
-                app:cmInnerColor="@color/colorAccent"
-                app:cmOuterColor="@color/colorPrimary"
-                app:cmStepTextColor="@color/colorPrimary"
-                app:cmStepTextSize="20sp" />
-
-            <EditText
-                android:id="@+id/main_qqstep_et"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content" />
-
-            <Button
-                android:id="@+id/main_qqstep_bt"
-                android:text="START"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:gravity="center_vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <com.test.cmviewdemo.ColorTrackTextView
-                android:text="@string/app_name"
-                android:id="@+id/main_TrackTextView"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:textSize="22sp"
-                app:cmChangeTextColor="@color/colorAccent"
-                app:cmOriginTextColor="@color/colorPrimary" />
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/main_left_to_right"
-                android:text="L_T_R"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                <com.test.cmviewdemo.CMTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorAccent"
+                    android:padding="10dp"
+                    app:cmText="@string/app_name"
+                    app:cmTextColor="@color/colorPrimary"
+                    app:cmTextSize="20sp" />
 
-            <Button
-                android:id="@+id/main_right_to_left"
-                android:text="R_T_L"
+                <Button
+                    android:id="@+id/main_viewpager_bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ViewPager" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.test.cmviewdemo.QQStyepView
+                    android:id="@+id/main_qqstep"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    app:cmInnerColor="@color/colorAccent"
+                    app:cmOuterColor="@color/colorPrimary"
+                    app:cmStepTextColor="@color/colorPrimary"
+                    app:cmStepTextSize="20sp" />
+
+                <EditText
+                    android:id="@+id/main_qqstep_et"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/main_qqstep_bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="START" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.test.cmviewdemo.ColorTrackTextView
+                    android:id="@+id/main_TrackTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="@string/app_name"
+                    android:textSize="22sp"
+                    app:cmChangeTextColor="@color/colorAccent"
+                    app:cmOriginTextColor="@color/colorPrimary" />
+
+                <Button
+                    android:id="@+id/main_left_to_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="L_T_R" />
+
+                <Button
+                    android:id="@+id/main_right_to_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="R_T_L" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <com.test.cmviewdemo.CMProgressView
+                    android:id="@+id/main_cmProgress_cmProgressView"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    app:cmProgressBorderWidth="10dp"
+                    app:cmProgressInnerColor="@color/colorAccent"
+                    app:cmProgressOuterColor="@color/colorPrimary"
+                    app:cmProgressTextColor="@color/colorAccent"
+                    app:cmProgressTextSize="20sp" />
+
+                <Button
+                    android:id="@+id/main_cmProgress_start_bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="START" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.test.cmviewdemo.CMShapeView
+                    android:id="@+id/main_cmShape_CMShape"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp" />
+
+                <Button
+                    android:id="@+id/main_cmShape_bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="START" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.test.cmviewdemo.CMRatingBarView
+                    android:id="@+id/main_cmShape_CMRatingBar"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/colorAccent"
+                    android:padding="5dp"
+                    app:cmRatingBarGradeNumber="5"
+                    app:cmRatingBarStartFocus="@mipmap/star_selected"
+                    app:cmRatingBarStartNormal="@mipmap/star_normal" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/main_cmlettersider_bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="START" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/main_cmtablabyout_bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="START-TabLayout" />
+
+
+            </LinearLayout>
+
 
         </LinearLayout>
-
-        <LinearLayout
-            android:gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <com.test.cmviewdemo.CMProgressView
-                android:id="@+id/main_cmProgress_cmProgressView"
-                android:layout_margin="10dp"
-                android:padding="10dp"
-                app:cmProgressBorderWidth="10dp"
-                app:cmProgressInnerColor="@color/colorAccent"
-                app:cmProgressOuterColor="@color/colorPrimary"
-                app:cmProgressTextColor="@color/colorAccent"
-                app:cmProgressTextSize="20sp"
-                android:layout_width="100dp"
-                android:layout_height="100dp" />
-
-            <Button
-                android:text="START"
-                android:id="@+id/main_cmProgress_start_bt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <com.test.cmviewdemo.CMShapeView
-                android:id="@+id/main_cmShape_CMShape"
-                android:layout_margin="10dp"
-                android:layout_width="50dp"
-                android:layout_height="50dp" />
-
-            <Button
-                android:id="@+id/main_cmShape_bt"
-                android:text="START"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <com.test.cmviewdemo.CMRatingBarView
-                android:padding="5dp"
-                android:background="@color/colorAccent"
-                app:cmRatingBarGradeNumber="5"
-                app:cmRatingBarStartFocus="@mipmap/star_selected"
-                app:cmRatingBarStartNormal="@mipmap/star_normal"
-                android:id="@+id/main_cmShape_CMRatingBar"
-                android:layout_margin="10dp"
-                android:layout_width="50dp"
-                android:layout_height="50dp" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/main_cmlettersider_bt"
-                android:text="START"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-
-        </LinearLayout>
-
-
-    </LinearLayout>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
