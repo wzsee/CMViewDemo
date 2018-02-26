@@ -13,20 +13,21 @@ import java.util.List;
  * Created by muchen on 2018/2/7.
  */
 
-public class CMTableLayoutView extends ViewGroup {
+public class CMTabLayoutView extends ViewGroup {
 
+    private CMTabLayoutBaseAdapter cmTabLayoutBaseAdapter;
 
     private List<List<View>> mChildViews = new ArrayList<>();
 
-    public CMTableLayoutView(Context context) {
+    public CMTabLayoutView(Context context) {
         this(context,null);
     }
 
-    public CMTableLayoutView(Context context, AttributeSet attrs)  {
+    public CMTabLayoutView(Context context, AttributeSet attrs)  {
         this(context, attrs,0);
     }
 
-    public CMTableLayoutView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public CMTabLayoutView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
@@ -72,7 +73,7 @@ public class CMTableLayoutView extends ViewGroup {
             if(lindWidth + (childView.getMeasuredWidth() + params.rightMargin + params.leftMargin) > width){
                 //累加高度，加上上一行的最大高度
                 height += maxHeight;
-                lindWidth = getPaddingLeft() + params.leftMargin + params.rightMargin;
+                lindWidth = childView.getMeasuredWidth() + params.leftMargin + params.rightMargin;
                 childViews = new ArrayList<View>();
                 mChildViews.add(childViews);
             }else{
@@ -145,4 +146,26 @@ public class CMTableLayoutView extends ViewGroup {
             top += maxHeight;
         }
     }
+
+    public void setAdapter(CMTabLayoutBaseAdapter adapter){
+        //判断传入的adapter是否为空
+        if(adapter == null){
+            //抛出空指针异常
+        }
+
+        //每一次设置之前，都要将之前的View清空
+        removeAllViews();
+
+        cmTabLayoutBaseAdapter = null;
+        cmTabLayoutBaseAdapter = adapter;
+
+        //获取childView的数量
+        int childCount = cmTabLayoutBaseAdapter.getCount();
+        for (int i = 0;i < childCount; i++){
+            //通过位置，获取View
+            View childView = cmTabLayoutBaseAdapter.getView(i,this);
+            addView(childView);
+        }
+    }
+
 }
