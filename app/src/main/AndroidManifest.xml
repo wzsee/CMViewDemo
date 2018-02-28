@@ -19,7 +19,8 @@
         <activity android:name="com.test.cmfragment.CMViewPageActivity" />
         <activity android:name="com.test.cmletterview.CMLetterSiderViewActivity" />
         <activity android:name="com.test.cmtablayoutview.CMTabLayoutViewActivity" />
-        <activity android:name="com.test.cmtouch.CMTouchViewActivity"></activity>
+        <activity android:name="com.test.cmtouch.CMTouchViewActivity" />
+        <activity android:name="com.test.cmSlidingMenuView.CMSlidingMenuActivity"></activity>
     </application>
 
 </manifest>

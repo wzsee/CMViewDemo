@@ -10,6 +10,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.test.cmSlidingMenuView.CMSlidingMenuActivity;
 import com.test.cmfragment.CMViewPageActivity;
 import com.test.cmletterview.CMLetterSiderViewActivity;
 import com.test.cmtablayoutview.CMTabLayoutViewActivity;
@@ -45,8 +46,11 @@ public class MainActivity extends AppCompatActivity {
 
         startCMTouchViewActivity();
 
+        startCMSlidingMenuActivity();
+
 
     }
+
 
 
 
@@ -237,6 +241,20 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, CMTouchViewActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void startCMSlidingMenuActivity() {
+
+        Button cmSlidingMenuDemo = findViewById(R.id.main_cmslidingmenuview_bt);
+
+        cmSlidingMenuDemo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, CMSlidingMenuActivity.class);
                 startActivity(intent);
             }
         });

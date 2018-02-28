@@ -44,5 +44,9 @@
         <attr name="cmLetterSiderNormalTextColor" format="color"></attr>
         <attr name="cmLetterSiderNormalTextSize" format="dimension"></attr>
     </declare-styleable>
+    
+    <declare-styleable name="CMSlidingMenuView">
+        <attr name="cmSlidingMenuRightMargin" format="dimension"></attr>
+    </declare-styleable>
 
 </resources>
