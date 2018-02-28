@@ -13,6 +13,7 @@ import android.widget.EditText;
 import com.test.cmfragment.CMViewPageActivity;
 import com.test.cmletterview.CMLetterSiderViewActivity;
 import com.test.cmtablayoutview.CMTabLayoutViewActivity;
+import com.test.cmtouch.CMTouchViewActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,8 +43,11 @@ public class MainActivity extends AppCompatActivity {
 
         startCMTabLayoutActivity();
 
+        startCMTouchViewActivity();
+
 
     }
+
 
 
     private void initViewPager() {
@@ -218,6 +222,21 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, CMTabLayoutViewActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+
+    private void startCMTouchViewActivity() {
+
+        Button cmTouchViewDemo = findViewById(R.id.main_cmtouchview_bt);
+
+        cmTouchViewDemo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, CMTouchViewActivity.class);
                 startActivity(intent);
             }
         });

@@ -124,6 +124,11 @@ public class CMTabLayoutView extends ViewGroup {
 
             for (View childView : childViews) {
 
+                //如果view是不可见状态，则不显示
+                if(childView.getVisibility() == GONE){
+                    continue;
+                }
+
                 ViewGroup.MarginLayoutParams params = (MarginLayoutParams) childView.getLayoutParams();
 
                 left += params.leftMargin;
