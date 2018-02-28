@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +25,11 @@ public class CMSlidingMenuView extends HorizontalScrollView {
     private int mMenuWidth;
     //菜单view，主view
     private View mMenuView,mContentView;
+
+    //定义手势快速滑动类
+    private GestureDetector mGestureDetector;
+    //定义 菜单是否打开
+    private boolean mMenuIsOpen = false;
 
     public CMSlidingMenuView(Context context) {
         this(context,null);
