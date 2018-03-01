@@ -20,7 +20,8 @@
         <activity android:name="com.test.cmletterview.CMLetterSiderViewActivity" />
         <activity android:name="com.test.cmtablayoutview.CMTabLayoutViewActivity" />
         <activity android:name="com.test.cmtouch.CMTouchViewActivity" />
-        <activity android:name="com.test.cmSlidingMenuView.CMSlidingMenuActivity"></activity>
+        <activity android:name="com.test.cmSlidingMenuView.CMSlidingMenuActivity" />
+        <activity android:name="com.test.cmQQSlidingMenuView.CMQQSlidingMenuActivity"></activity>
     </application>
 
 </manifest>

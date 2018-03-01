@@ -10,6 +10,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.test.cmQQSlidingMenuView.CMQQSlidingMenuActivity;
 import com.test.cmSlidingMenuView.CMSlidingMenuActivity;
 import com.test.cmfragment.CMViewPageActivity;
 import com.test.cmletterview.CMLetterSiderViewActivity;
@@ -48,10 +49,10 @@ public class MainActivity extends AppCompatActivity {
 
         startCMSlidingMenuActivity();
 
+        startCMQQSlidingMenuActivity();
+
 
     }
-
-
 
 
     private void initViewPager() {
@@ -255,6 +256,20 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, CMSlidingMenuActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void startCMQQSlidingMenuActivity() {
+
+        Button cmQQSlidingMenuDemo = findViewById(R.id.main_cmqqslidingmenuview_bt);
+
+        cmQQSlidingMenuDemo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, CMQQSlidingMenuActivity.class);
                 startActivity(intent);
             }
         });

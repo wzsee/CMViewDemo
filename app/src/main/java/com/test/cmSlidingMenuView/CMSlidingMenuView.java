@@ -31,6 +31,7 @@ public class CMSlidingMenuView extends HorizontalScrollView {
     //定义 菜单是否打开
     private boolean mMenuIsOpen = false;
 
+
     public CMSlidingMenuView(Context context) {
         this(context,null);
     }
@@ -48,6 +49,57 @@ public class CMSlidingMenuView extends HorizontalScrollView {
         //获取菜单页的宽度 = 屏幕的宽度 - 右边的一小部分（自己定义的宽度）
         mMenuWidth = (int)(getScreenWidth(context) - rightMargin);
         array.recycle();
+
+        mGestureDetector = new GestureDetector(context,new GestureListener());
+    }
+
+    /**
+     * @info 初始化手势处理类 手势处理类的监听回调
+     */
+    private class GestureListener extends GestureDetector.SimpleOnGestureListener{
+        //只处理快速滑动
+        @Override
+        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+            //判断，快速上下滑动的时候不做处理
+            if(Math.abs(velocityY) > Math.abs(velocityX)){
+                return super.onFling(e1, e2, velocityX, velocityY);
+            }
+
+            if(mMenuIsOpen){
+                if(velocityX < 0){//
+                    toggleMenu();
+                    return true;
+                }
+            }else{
+                if(velocityX > 0){
+                    toggleMenu();
+                    return true;
+                }
+            }
+
+            return super.onFling(e1, e2, velocityX, velocityY);
+        }
+    }
+
+    private void toggleMenu(){
+        if(mMenuIsOpen){
+            closeMenu();
+        }else{
+            openMenu();
+        }
+    }
+
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        if(mMenuIsOpen){
+            float currentX = ev.getX();
+            if(currentX > mMenuWidth){
+                toggleMenu();
+                return false;
+            }
+        }
+        return super.dispatchTouchEvent(ev);
     }
 
     /**
@@ -94,6 +146,11 @@ public class CMSlidingMenuView extends HorizontalScrollView {
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
 
+        //添加手势快速滑动处理
+        if(mGestureDetector.onTouchEvent(ev)){
+            return false;
+        }
+
         //1.获取手指移动的速率，如果速率大于一定值，就认定为快速滑动,
         //2.处理事件拦截
 
@@ -119,6 +176,7 @@ public class CMSlidingMenuView extends HorizontalScrollView {
      */
     private void openMenu() {
         smoothScrollTo(0,0);
+        mMenuIsOpen = true;
     }
 
     /**
@@ -126,6 +184,7 @@ public class CMSlidingMenuView extends HorizontalScrollView {
      */
     private void closeMenu() {
         smoothScrollTo(mMenuWidth,0);
+        mMenuIsOpen = false;
     }
 
     /**
@@ -151,7 +210,8 @@ public class CMSlidingMenuView extends HorizontalScrollView {
 
         //设置菜单的缩放和透明
         //透明
-        float leftAlpha = 0.5f + (1 - sclae)*0.5f;
+        float leftAlpha = 0.5f
+                + (1 - sclae)*0.5f;
         ViewCompat.setAlpha(mMenuView,leftAlpha);
 
         //缩放 0.7f

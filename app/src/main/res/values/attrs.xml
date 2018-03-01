@@ -44,9 +44,15 @@
         <attr name="cmLetterSiderNormalTextColor" format="color"></attr>
         <attr name="cmLetterSiderNormalTextSize" format="dimension"></attr>
     </declare-styleable>
-    
+
+    <!--仿酷狗侧拉-->
     <declare-styleable name="CMSlidingMenuView">
         <attr name="cmSlidingMenuRightMargin" format="dimension"></attr>
+    </declare-styleable>
+
+    <!--仿qq侧拉-->
+    <declare-styleable name="CMQQSlidingMenuView">
+        <attr name="cmQQSlidingMenuRightMargin" format="dimension"></attr>
     </declare-styleable>
 
 </resources>
