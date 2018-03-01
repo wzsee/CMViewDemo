@@ -12,6 +12,8 @@ import android.widget.EditText;
 
 import com.test.cmQQSlidingMenuView.CMQQSlidingMenuActivity;
 import com.test.cmSlidingMenuView.CMSlidingMenuActivity;
+import com.test.cmVerticalDragListView.CMVerticalDragListView;
+import com.test.cmVerticalDragListView.CMVerticalDragListViewActivity;
 import com.test.cmfragment.CMViewPageActivity;
 import com.test.cmletterview.CMLetterSiderViewActivity;
 import com.test.cmtablayoutview.CMTabLayoutViewActivity;
@@ -51,8 +53,10 @@ public class MainActivity extends AppCompatActivity {
 
         startCMQQSlidingMenuActivity();
 
-
+        startCMVerticalDragListViewActivity();
     }
+
+
 
 
     private void initViewPager() {
@@ -270,6 +274,20 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, CMQQSlidingMenuActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void startCMVerticalDragListViewActivity() {
+
+        Button cmVerticalDragListViewDemo = findViewById(R.id.main_cmverticaldragview_bt);
+
+        cmVerticalDragListViewDemo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, CMVerticalDragListViewActivity.class);
                 startActivity(intent);
             }
         });

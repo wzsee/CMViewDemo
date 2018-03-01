@@ -220,7 +220,7 @@
                     android:id="@+id/main_cmslidingmenuview_bt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="START-CMTouchViewDemo" />
+                    android:text="START-CMSlidingMenuViewDemo" />
 
 
             </LinearLayout>
@@ -235,7 +235,22 @@
                     android:id="@+id/main_cmqqslidingmenuview_bt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="START-CMTouchViewDemo" />
+                    android:text="START-CMQQSlidingMenuViewDemo" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/main_cmverticaldragview_bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="START-CMVerticalViewDemo" />
 
 
             </LinearLayout>
