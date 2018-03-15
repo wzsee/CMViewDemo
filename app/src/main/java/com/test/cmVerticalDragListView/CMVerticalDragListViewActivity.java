@@ -14,6 +14,7 @@ import com.test.cmviewdemo.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.zip.Inflater;
 
 public class CMVerticalDragListViewActivity extends AppCompatActivity {
 
@@ -50,6 +51,11 @@ public class CMVerticalDragListViewActivity extends AppCompatActivity {
     private void setData() {
 
         mLv.setAdapter(new BaseAdapter() {
+
+            private LayoutInflater inflater;
+
+
+
             @Override
             public int getCount() {
                 return mMItems.size();
@@ -67,10 +73,10 @@ public class CMVerticalDragListViewActivity extends AppCompatActivity {
 
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
-                View from = LayoutInflater.from(CMVerticalDragListViewActivity.this).inflate(R.layout.activity_cmvertical_drag_item,parent,false);
-                TextView tv = from.findViewById(R.id.cmlablayout_item_tv);
+                View view = LayoutInflater.from(CMVerticalDragListViewActivity.this).inflate(R.layout.activity_cmvertical_drag_item, null);
+                TextView tv = view.findViewById(R.id.cm_vertical_item_tv);
                 tv.setText(mMItems.get(position));
-                return null;
+                return view;
             }
         });
     }

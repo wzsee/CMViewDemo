@@ -15,6 +15,7 @@
         android:layout_height="200dp"/>
 
     <ListView
+        android:background="@color/colorPrimaryDark"
         android:id="@+id/menu_item_lv"
         android:gravity="center"
         android:text="前面"
