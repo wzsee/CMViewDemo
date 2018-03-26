@@ -10,6 +10,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.test.cmMaterialDesign.CMMaterialDesionDemoActivity;
 import com.test.cmQQSlidingMenuView.CMQQSlidingMenuActivity;
 import com.test.cmSlidingMenuView.CMSlidingMenuActivity;
 import com.test.cmVerticalDragListView.CMVerticalDragListView;
@@ -54,8 +55,10 @@ public class MainActivity extends AppCompatActivity {
         startCMQQSlidingMenuActivity();
 
         startCMVerticalDragListViewActivity();
-    }
 
+        startCMMaterialDesignDemoActivity();
+
+    }
 
 
 
@@ -288,6 +291,21 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, CMVerticalDragListViewActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+
+
+    private void startCMMaterialDesignDemoActivity() {
+        Button cmMaterialDesionDemo = findViewById(R.id.main_cmmaterialdesign_bt);
+
+        cmMaterialDesionDemo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, CMMaterialDesionDemoActivity.class);
                 startActivity(intent);
             }
         });

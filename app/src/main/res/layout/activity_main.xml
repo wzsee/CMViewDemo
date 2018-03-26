@@ -205,7 +205,7 @@
                     android:id="@+id/main_cmtouchview_bt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="START-CMTouchViewDemo" />
+                    android:text="START-CM-TouchView-Demo" />
 
 
             </LinearLayout>
@@ -220,7 +220,7 @@
                     android:id="@+id/main_cmslidingmenuview_bt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="START-CMSlidingMenuViewDemo" />
+                    android:text="START-CM-SlidingMenuView-Demo" />
 
 
             </LinearLayout>
@@ -235,7 +235,7 @@
                     android:id="@+id/main_cmqqslidingmenuview_bt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="START-CMQQSlidingMenuViewDemo" />
+                    android:text="START-CMQQ-SlidingMenuView-Demo" />
 
 
             </LinearLayout>
@@ -250,7 +250,23 @@
                     android:id="@+id/main_cmverticaldragview_bt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="START-CMVerticalViewDemo" />
+                    android:text="START-CM-VerticalView-Demo" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/main_cmmaterialdesign_bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="START-CM-MaterialDesign-Demo" />
 
 
             </LinearLayout>
