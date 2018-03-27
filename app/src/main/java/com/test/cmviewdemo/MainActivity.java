@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void initViewPager() {
-        Button main_viewpager_bt = findViewById(R.id.main_viewpager_bt);
+        Button main_viewpager_bt = (Button)findViewById(R.id.main_viewpager_bt);
         main_viewpager_bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,10 +76,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void initColorTrackView() {
-        colorTrackTextView = findViewById(R.id.main_TrackTextView);
+        colorTrackTextView = (ColorTrackTextView)findViewById(R.id.main_TrackTextView);
 
-        leftToRight = findViewById(R.id.main_left_to_right);
-        rightToLeft = findViewById(R.id.main_right_to_left);
+        leftToRight = (Button)findViewById(R.id.main_left_to_right);
+        rightToLeft = (Button)findViewById(R.id.main_right_to_left);
 
         leftToRight.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -125,10 +125,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initQQStep() {
-        main_step_et = findViewById(R.id.main_qqstep_et);
+        main_step_et = (EditText)findViewById(R.id.main_qqstep_et);
         final String currentText = main_step_et.getText().toString();
-        main_step_bt = findViewById(R.id.main_qqstep_bt);
-        cmMainQQStep = findViewById(R.id.main_qqstep);
+        main_step_bt = (Button)findViewById(R.id.main_qqstep_bt);
+        cmMainQQStep = (QQStyepView)findViewById(R.id.main_qqstep);
         //1.设置最大步数
         cmMainQQStep.setMaxStep(4000);
 
@@ -158,8 +158,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void initProgressView() {
-        Button main_progress_bt = findViewById(R.id.main_cmProgress_start_bt);
-        final CMProgressView main_progress_cmProgressView = findViewById(R.id.main_cmProgress_cmProgressView);
+        Button main_progress_bt = (Button)findViewById(R.id.main_cmProgress_start_bt);
+        final CMProgressView main_progress_cmProgressView = (CMProgressView)findViewById(R.id.main_cmProgress_cmProgressView);
         main_progress_cmProgressView.setProgressMas(150);
         main_progress_bt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -181,8 +181,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void initCMShapeView() {
-        final CMShapeView main_CMShapeView_CMShapeView = findViewById(R.id.main_cmShape_CMShape);
-        Button main_CMShapeView_bt = findViewById(R.id.main_cmShape_bt);
+        final CMShapeView main_CMShapeView_CMShapeView = (CMShapeView)findViewById(R.id.main_cmShape_CMShape);
+        Button main_CMShapeView_bt = (Button)findViewById(R.id.main_cmShape_bt);
         main_CMShapeView_bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -213,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void startCMLetterSiderViewActivity() {
 
-        Button cmLetterSiderActivityBt = findViewById(R.id.main_cmlettersider_bt);
+        Button cmLetterSiderActivityBt = (Button)findViewById(R.id.main_cmlettersider_bt);
 
         cmLetterSiderActivityBt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -227,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void startCMTabLayoutActivity() {
 
-        Button cmTabLayoutActivityBt = findViewById(R.id.main_cmtablabyout_bt);
+        Button cmTabLayoutActivityBt = (Button)findViewById(R.id.main_cmtablabyout_bt);
 
         cmTabLayoutActivityBt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -242,7 +242,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void startCMTouchViewActivity() {
 
-        Button cmTouchViewDemo = findViewById(R.id.main_cmtouchview_bt);
+        Button cmTouchViewDemo = (Button)findViewById(R.id.main_cmtouchview_bt);
 
         cmTouchViewDemo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -256,7 +256,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void startCMSlidingMenuActivity() {
 
-        Button cmSlidingMenuDemo = findViewById(R.id.main_cmslidingmenuview_bt);
+        Button cmSlidingMenuDemo = (Button)findViewById(R.id.main_cmslidingmenuview_bt);
 
         cmSlidingMenuDemo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -270,7 +270,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void startCMQQSlidingMenuActivity() {
 
-        Button cmQQSlidingMenuDemo = findViewById(R.id.main_cmqqslidingmenuview_bt);
+        Button cmQQSlidingMenuDemo = (Button)findViewById(R.id.main_cmqqslidingmenuview_bt);
 
         cmQQSlidingMenuDemo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -284,7 +284,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void startCMVerticalDragListViewActivity() {
 
-        Button cmVerticalDragListViewDemo = findViewById(R.id.main_cmverticaldragview_bt);
+        Button cmVerticalDragListViewDemo = (Button)findViewById(R.id.main_cmverticaldragview_bt);
 
         cmVerticalDragListViewDemo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -299,7 +299,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void startCMMaterialDesignDemoActivity() {
-        Button cmMaterialDesionDemo = findViewById(R.id.main_cmmaterialdesign_bt);
+        Button cmMaterialDesionDemo = (Button)findViewById(R.id.main_cmmaterialdesign_bt);
 
         cmMaterialDesionDemo.setOnClickListener(new View.OnClickListener() {
             @Override

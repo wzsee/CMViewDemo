@@ -33,7 +33,7 @@ public class CMTabLayoutViewActivity extends AppCompatActivity {
      * @info 添加控件
      */
     private void initView() {
-        cmTableLayoutView = findViewById(R.id.tab_layout);
+        cmTableLayoutView = (CMTabLayoutView)findViewById(R.id.tab_layout);
     }
 
     private void initData() {

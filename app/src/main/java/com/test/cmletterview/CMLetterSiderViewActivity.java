@@ -34,7 +34,7 @@ public class CMLetterSiderViewActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        mSiderTextTv = findViewById(R.id.sider_text_tv);
-        mSiderView = findViewById(R.id.sider_letter_cmlettersider);
+        mSiderTextTv = (TextView)findViewById(R.id.sider_text_tv);
+        mSiderView = (CMLetterSiderView)findViewById(R.id.sider_letter_cmlettersider);
     }
 }

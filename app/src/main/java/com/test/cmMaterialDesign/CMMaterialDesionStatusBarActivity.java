@@ -1,8 +1,10 @@
 package com.test.cmMaterialDesign;
 
+import android.app.Activity;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ScrollView;
@@ -38,8 +40,15 @@ public class CMMaterialDesionStatusBarActivity extends AppCompatActivity {
      */
     private void initView() {
         mTitleBar = findViewById(R.id.title_bar);
-        mScrollView = findViewById(R.id.title_scrollview);
-        mImageView = findViewById(R.id.title_imageview);
+        mScrollView = (ScrollView)findViewById(R.id.title_scrollview);
+        mImageView = (ImageView)findViewById(R.id.title_imageview);
+
+        mScrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                mImageViewHeight = mImageView.getMeasuredHeight() - mTitleBar.getMeasuredHeight() ;
+            }
+        });
     }
 
 
@@ -48,13 +57,6 @@ public class CMMaterialDesionStatusBarActivity extends AppCompatActivity {
      *
      */
     private void setTitleBarBackground() {
-
-        mImageView.post(new Runnable() {
-            @Override
-            public void run() {
-                mImageViewHeight = mImageView.getMeasuredHeight();
-            }
-        });
 
         mTitleBar.getBackground().setAlpha(0);
 
@@ -74,7 +76,11 @@ public class CMMaterialDesionStatusBarActivity extends AppCompatActivity {
 
                 float alpha = (float) scrollY/mImageViewHeight;
 
-                if(alpha < 0){
+                Log.e("====mImageViewHeight===",mImageViewHeight+"");
+                Log.e("====scrollY============",scrollY+"");
+                Log.e("====alpha============",alpha+"");
+
+                if(alpha <= 0){
                     alpha = 0;
                 }
 
@@ -82,7 +88,7 @@ public class CMMaterialDesionStatusBarActivity extends AppCompatActivity {
                     alpha = 1;
                 }
 
-                mTitleBar.getBackground().setAlpha((int) alpha*255);
+                mTitleBar.getBackground().setAlpha((int) (alpha*255));
 
             }
         });

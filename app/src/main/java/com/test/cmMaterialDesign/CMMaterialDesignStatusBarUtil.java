@@ -52,7 +52,7 @@ public class CMMaterialDesignStatusBarUtil {
             decorView.addView(view);
 
             //获取activity中setContentView布局的根布局
-            ViewGroup contentView = activity.findViewById(android.R.id.content);
+            ViewGroup contentView = (ViewGroup)activity.findViewById(android.R.id.content);
             contentView.setPadding(0,getStatusBarHeight(activity),0,0);
         }
     }
@@ -62,7 +62,7 @@ public class CMMaterialDesignStatusBarUtil {
      * @param activity
      * @return
      */
-    private static int getStatusBarHeight(Activity activity){
+    public static int getStatusBarHeight(Activity activity){
         //获取状态栏的高度
         Resources resources = activity.getResources();
         int statusBarHeight = resources.getIdentifier("status_bar_height", "dimen", "android");
@@ -93,7 +93,7 @@ public class CMMaterialDesignStatusBarUtil {
             decorView.addView(view);
 
             //获取activity中setContentView布局的根布局
-            ViewGroup contentView = activity.findViewById(android.R.id.content);
+            ViewGroup contentView = (ViewGroup)activity.findViewById(android.R.id.content);
             contentView.setPadding(0,getStatusBarHeight(activity),0,0);
         }
     }

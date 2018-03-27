@@ -8,10 +8,6 @@
     tools:context="com.test.cmMaterialDesign.CMMaterialDesionStatusBarActivity">
 
 
-
-
-
-
     <ScrollView
         android:id="@+id/title_scrollview"
         android:layout_width="match_parent"

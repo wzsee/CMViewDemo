@@ -23,7 +23,7 @@ public class CMTouchViewActivity extends AppCompatActivity {
 
     private void initView() {
 
-        cmTouchView = findViewById(R.id.cmtouchview);
+        cmTouchView = (CMTouchView)findViewById(R.id.cmtouchview);
 
         cmTouchView.setOnTouchListener(new View.OnTouchListener() {
             @Override

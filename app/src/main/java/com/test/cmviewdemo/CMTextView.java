@@ -77,11 +77,13 @@ public class CMTextView extends AppCompatTextView {
             Rect bounds = new Rect();
             cmPaint.getTextBounds(mCmText,0,mCmText.length(),bounds);
             height = bounds.height() + getPaddingBottom() + getPaddingTop();
+            width = bounds.width() + getPaddingLeft() + getPaddingRight();
         }
 
         if(MeasureSpec.AT_MOST == widthMode){
             Rect bounds = new Rect();
             cmPaint.getTextBounds(mCmText,0,mCmText.length(),bounds);
+            height = bounds.height() + getPaddingBottom() + getPaddingTop();
             width = bounds.width() + getPaddingLeft() + getPaddingRight();
         }
 

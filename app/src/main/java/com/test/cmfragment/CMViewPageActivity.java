@@ -34,8 +34,8 @@ public class CMViewPageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_pager);
 
         mIndicators = new ArrayList<>();
-        mIndicatorContainer = findViewById(R.id.indicator_view);
-        mViewPager = findViewById(R.id.view_pager);
+        mIndicatorContainer = (LinearLayout)findViewById(R.id.indicator_view);
+        mViewPager = (ViewPager)findViewById(R.id.view_pager);
         initIndicator();
         initViewPager();
     }

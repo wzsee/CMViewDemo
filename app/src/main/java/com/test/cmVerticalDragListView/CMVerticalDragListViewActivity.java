@@ -36,7 +36,7 @@ public class CMVerticalDragListViewActivity extends AppCompatActivity {
 
 
     private void initView() {
-        mLv = findViewById(R.id.menu_item_lv);
+        mLv = (ListView)findViewById(R.id.menu_item_lv);
     }
 
 
@@ -74,7 +74,7 @@ public class CMVerticalDragListViewActivity extends AppCompatActivity {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 View view = LayoutInflater.from(CMVerticalDragListViewActivity.this).inflate(R.layout.activity_cmvertical_drag_item, null);
-                TextView tv = view.findViewById(R.id.cm_vertical_item_tv);
+                TextView tv = (TextView)view.findViewById(R.id.cm_vertical_item_tv);
                 tv.setText(mMItems.get(position));
                 return view;
             }
