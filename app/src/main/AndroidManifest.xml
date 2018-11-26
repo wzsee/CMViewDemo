@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.test.cmviewdemo">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -27,7 +29,8 @@
         <activity android:name="com.test.cmMaterialDesign.CMMaterialDesionStatusBarActivity" />
         <activity android:name="com.test.cmMaterialDesign.CMMaterialBehaviorActivity" />
         <activity android:name="com.test.cmDashView.CMDashBoardActivity" />
-        <activity android:name="com.test.cmPieChartView.CMPieChartViewActivity"></activity>
+        <activity android:name="com.test.cmPieChartView.CMPieChartViewActivity" />
+        <activity android:name="com.test.cmAvatarView.CMAvatarViewActivity"></activity>
     </application>
 
 </manifest>

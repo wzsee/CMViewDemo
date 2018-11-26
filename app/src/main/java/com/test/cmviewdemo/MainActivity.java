@@ -10,6 +10,8 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.test.cmAvatarView.CMAvatarView;
+import com.test.cmAvatarView.CMAvatarViewActivity;
 import com.test.cmDashView.CMDashBoardActivity;
 import com.test.cmMaterialDesign.CMMaterialDesionDemoActivity;
 import com.test.cmPieChartView.CMPieChartView;
@@ -65,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
         startCMPieChartActivity();
 
+        startCMAvaterViewActivity();
 
     }
 
@@ -347,6 +350,23 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, CMPieChartViewActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+
+    /**
+     * @info 圆形头像
+     */
+    private void startCMAvaterViewActivity() {
+        Button cmAvatarViewDemo = (Button)findViewById(R.id.main_cmavatar_bt);
+
+        cmAvatarViewDemo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, CMAvatarViewActivity.class);
                 startActivity(intent);
             }
         });
