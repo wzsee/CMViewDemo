@@ -12,6 +12,8 @@ import android.widget.EditText;
 
 import com.test.cmDashView.CMDashBoardActivity;
 import com.test.cmMaterialDesign.CMMaterialDesionDemoActivity;
+import com.test.cmPieChartView.CMPieChartView;
+import com.test.cmPieChartView.CMPieChartViewActivity;
 import com.test.cmQQSlidingMenuView.CMQQSlidingMenuActivity;
 import com.test.cmSlidingMenuView.CMSlidingMenuActivity;
 import com.test.cmVerticalDragListView.CMVerticalDragListView;
@@ -61,7 +63,11 @@ public class MainActivity extends AppCompatActivity {
 
         startCMDashBoardViewActivity();
 
+        startCMPieChartActivity();
+
+
     }
+
 
 
     private void initViewPager() {
@@ -324,6 +330,23 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, CMDashBoardActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+
+    /**
+     * @info 饼图
+     */
+    private void startCMPieChartActivity() {
+        Button cmPieChartViewDemo = (Button)findViewById(R.id.main_cmpiechart_bt);
+
+        cmPieChartViewDemo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, CMPieChartViewActivity.class);
                 startActivity(intent);
             }
         });
