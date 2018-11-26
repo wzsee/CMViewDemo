@@ -25,7 +25,8 @@
         <activity android:name="com.test.cmVerticalDragListView.CMVerticalDragListViewActivity" />
         <activity android:name="com.test.cmMaterialDesign.CMMaterialDesionDemoActivity" />
         <activity android:name="com.test.cmMaterialDesign.CMMaterialDesionStatusBarActivity" />
-        <activity android:name="com.test.cmMaterialDesign.CMMaterialBehaviorActivity"></activity>
+        <activity android:name="com.test.cmMaterialDesign.CMMaterialBehaviorActivity" />
+        <activity android:name="com.test.cmDashView.CMDashBoardActivity"></activity>
     </application>
 
 </manifest>

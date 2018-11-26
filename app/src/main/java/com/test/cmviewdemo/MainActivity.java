@@ -10,6 +10,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.test.cmDashView.CMDashBoardActivity;
 import com.test.cmMaterialDesign.CMMaterialDesionDemoActivity;
 import com.test.cmQQSlidingMenuView.CMQQSlidingMenuActivity;
 import com.test.cmSlidingMenuView.CMSlidingMenuActivity;
@@ -58,8 +59,9 @@ public class MainActivity extends AppCompatActivity {
 
         startCMMaterialDesignDemoActivity();
 
-    }
+        startCMDashBoardViewActivity();
 
+    }
 
 
     private void initViewPager() {
@@ -306,6 +308,22 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, CMMaterialDesionDemoActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    /**
+     * @info 仪表盘
+     */
+    private void startCMDashBoardViewActivity() {
+        Button cmDashBoardViewDemo = (Button)findViewById(R.id.main_cmdashboard_bt);
+
+        cmDashBoardViewDemo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, CMDashBoardActivity.class);
                 startActivity(intent);
             }
         });
