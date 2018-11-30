@@ -316,6 +316,21 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/main_cmstockpiechart_bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="START-CM-仿涨乐财富通详情买入卖出扇形图-Demo" />
+
+
+            </LinearLayout>
+
 
         </LinearLayout>
     </ScrollView>

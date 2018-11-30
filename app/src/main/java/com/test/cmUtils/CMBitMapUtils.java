@@ -8,13 +8,13 @@ import com.test.cmviewdemo.R;
 
 public class CMBitMapUtils {
 
-    public static Bitmap getAvatar(int width){
+    public static Bitmap getAvatar(Resources res,int width){
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
-        BitmapFactory.decodeResource(Resources.getSystem(), R.drawable.avatar,options);
+        BitmapFactory.decodeResource(res, R.drawable.avatar,options);
         options.inJustDecodeBounds = false;
         options.inDensity = options.outWidth;
         options.inTargetDensity = width;
-        return BitmapFactory.decodeResource(Resources.getSystem(),R.drawable.avatar,options);
+        return BitmapFactory.decodeResource(res,R.drawable.avatar,options);
     }
 }

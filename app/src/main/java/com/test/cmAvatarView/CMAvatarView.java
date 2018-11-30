@@ -19,7 +19,7 @@ import com.test.cmviewdemo.R;
 
 public class CMAvatarView extends View {
 
-    private static final float WIDTH = DpToPxUtil.dp2px(300);
+    private static final float WIDTH = DpToPxUtil.dp2px(200);
     private static final float PADDING = DpToPxUtil.dp2px(50);
     private static final float EDGE_WIDTH = DpToPxUtil.dp2px(2);
 
@@ -29,8 +29,7 @@ public class CMAvatarView extends View {
     RectF savedArea = new RectF();
 
     {
-//        bitmap = CMBitMapUtils.getAvatar((int) WIDTH);
-        bitmap = getAvatar((int) WIDTH);
+        bitmap = CMBitMapUtils.getAvatar(getResources(),(int) WIDTH);
     }
 
     public CMAvatarView(Context context) {
@@ -62,15 +61,7 @@ public class CMAvatarView extends View {
         canvas.drawBitmap(bitmap, PADDING, PADDING, paint);
         paint.setXfermode(null);
         canvas.restoreToCount(saved);
-    }
 
-    Bitmap getAvatar(int width) {
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inJustDecodeBounds = true;
-        BitmapFactory.decodeResource(getResources(), R.drawable.avatar, options);
-        options.inJustDecodeBounds = false;
-        options.inDensity = options.outWidth;
-        options.inTargetDensity = width;
-        return BitmapFactory.decodeResource(getResources(), R.drawable.avatar, options);
+
     }
 }

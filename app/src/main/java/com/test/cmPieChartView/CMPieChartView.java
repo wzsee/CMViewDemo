@@ -18,13 +18,13 @@ public class CMPieChartView extends View {
     //偏移量
     private static final float LENGTH = DpToPxUtil.dp2px(20);
     //偏移的扇形
-    private static final int PULLED_OUT_INDEX = 4;
+    private static final int PULLED_OUT_INDEX = 2;
 
     //画笔
     private Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private RectF bounds = new RectF();
-    private int[] angles = {50,120,20,40,90,60};
-    private int[] colors = {Color.parseColor("#CE0000"),Color.parseColor("#006030"),Color.parseColor("#5B4B00"),Color.parseColor("#336666"),Color.parseColor("#000079"),Color.parseColor("#3C3C3C")};
+    private int[] angles = {60,45,60,30,90,60,15};
+    private int[] colors = {Color.parseColor("#CE0000"),Color.parseColor("#006030"),Color.parseColor("#4169E1"),Color.parseColor("#A2CD5A"),Color.parseColor("#CD00CD"),Color.parseColor("#000079"),Color.parseColor("#B3EE3A")};
 
     private int currentAngle = 0;
 

@@ -18,6 +18,7 @@ import com.test.cmPieChartView.CMPieChartView;
 import com.test.cmPieChartView.CMPieChartViewActivity;
 import com.test.cmQQSlidingMenuView.CMQQSlidingMenuActivity;
 import com.test.cmSlidingMenuView.CMSlidingMenuActivity;
+import com.test.cmStockPieChartView.CMStockPieChartViewActivity;
 import com.test.cmVerticalDragListView.CMVerticalDragListView;
 import com.test.cmVerticalDragListView.CMVerticalDragListViewActivity;
 import com.test.cmfragment.CMViewPageActivity;
@@ -360,13 +361,13 @@ public class MainActivity extends AppCompatActivity {
      * @info 圆形头像
      */
     private void startCMAvaterViewActivity() {
-        Button cmAvatarViewDemo = (Button)findViewById(R.id.main_cmavatar_bt);
+        Button cmStockPieChartViewDemo = (Button)findViewById(R.id.main_cmstockpiechart_bt);
 
-        cmAvatarViewDemo.setOnClickListener(new View.OnClickListener() {
+        cmStockPieChartViewDemo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this, CMAvatarViewActivity.class);
+                intent.setClass(MainActivity.this, CMStockPieChartViewActivity.class);
                 startActivity(intent);
             }
         });
