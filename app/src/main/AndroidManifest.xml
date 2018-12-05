@@ -31,7 +31,8 @@
         <activity android:name="com.test.cmDashView.CMDashBoardActivity" />
         <activity android:name="com.test.cmPieChartView.CMPieChartViewActivity" />
         <activity android:name="com.test.cmAvatarView.CMAvatarViewActivity" />
-        <activity android:name="com.test.cmStockPieChartView.CMStockPieChartViewActivity"></activity>
+        <activity android:name="com.test.cmStockPieChartView.CMStockPieChartViewActivity" />
+        <activity android:name="com.test.cmTextView.CMImageTextViewActivity"></activity>
     </application>
 
 </manifest>

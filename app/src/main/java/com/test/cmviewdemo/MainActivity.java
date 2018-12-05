@@ -19,6 +19,7 @@ import com.test.cmPieChartView.CMPieChartViewActivity;
 import com.test.cmQQSlidingMenuView.CMQQSlidingMenuActivity;
 import com.test.cmSlidingMenuView.CMSlidingMenuActivity;
 import com.test.cmStockPieChartView.CMStockPieChartViewActivity;
+import com.test.cmTextView.CMImageTextViewActivity;
 import com.test.cmVerticalDragListView.CMVerticalDragListView;
 import com.test.cmVerticalDragListView.CMVerticalDragListViewActivity;
 import com.test.cmfragment.CMViewPageActivity;
@@ -70,8 +71,9 @@ public class MainActivity extends AppCompatActivity {
 
         startCMAvaterViewActivity();
 
-    }
+        startCMImageTextViewActivity();
 
+    }
 
 
     private void initViewPager() {
@@ -368,6 +370,24 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, CMStockPieChartViewActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+
+    /**
+     * @info 图文混排 Image-TextView
+     */
+    private void startCMImageTextViewActivity() {
+
+        Button cmStockPieChartViewDemo = (Button)findViewById(R.id.main_cmtextview_image_bt);
+
+        cmStockPieChartViewDemo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, CMImageTextViewActivity.class);
                 startActivity(intent);
             }
         });
