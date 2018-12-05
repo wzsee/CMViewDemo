@@ -32,7 +32,8 @@
         <activity android:name="com.test.cmPieChartView.CMPieChartViewActivity" />
         <activity android:name="com.test.cmAvatarView.CMAvatarViewActivity" />
         <activity android:name="com.test.cmStockPieChartView.CMStockPieChartViewActivity" />
-        <activity android:name="com.test.cmTextView.CMImageTextViewActivity"></activity>
+        <activity android:name="com.test.cmTextView.CMImageTextViewActivity" />
+        <activity android:name="com.test.cmAnimation.CMAnimationRorateActivity"></activity>
     </application>
 
 </manifest>

@@ -10,6 +10,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.test.cmAnimation.CMAnimationRorateActivity;
 import com.test.cmAvatarView.CMAvatarView;
 import com.test.cmAvatarView.CMAvatarViewActivity;
 import com.test.cmDashView.CMDashBoardActivity;
@@ -73,7 +74,10 @@ public class MainActivity extends AppCompatActivity {
 
         startCMImageTextViewActivity();
 
+        startCMAnimationRotateActivity();
+
     }
+
 
 
     private void initViewPager() {
@@ -388,6 +392,24 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, CMImageTextViewActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+
+    /**
+     * @info 自定义动画 旋转裁切
+     */
+    private void startCMAnimationRotateActivity() {
+
+        Button cmStockPieChartViewDemo = (Button)findViewById(R.id.main_cmanimation_rorate_bt);
+
+        cmStockPieChartViewDemo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, CMAnimationRorateActivity.class);
                 startActivity(intent);
             }
         });
