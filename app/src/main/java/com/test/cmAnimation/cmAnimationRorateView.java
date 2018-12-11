@@ -14,7 +14,8 @@ import com.test.cmUtils.DpToPxUtil;
 import com.test.cmviewdemo.R;
 
 public class cmAnimationRorateView extends View {
-
+    private static final float PADDING = DpToPxUtil.dp2px(100);
+    private static final float IMAGE_WIDTH = DpToPxUtil.dp2px(200);
     private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
     private Bitmap mBitmap;
@@ -23,8 +24,38 @@ public class cmAnimationRorateView extends View {
 
     {
         mBitmap = CMBitMapUtils.getAvatarWithImage(getResources(),(int) DpToPxUtil.dp2px(200),R.drawable.sun_photo);
-        mCamera.rotateX(45);
-        mCamera.setLocation(0,0,DpToPxUtil.getZForCamera());
+        mCamera.setLocation(0, 0, DpToPxUtil.getZForCamera()); // -8 = -8 * 72
+    }
+
+    float topFlip = 0;
+    float bottomFlip = 0;
+    float flipRotation = 0;
+
+    public float getTopFlip() {
+        return topFlip;
+    }
+
+    public void setTopFlip(float topFlip) {
+        this.topFlip = topFlip;
+        invalidate();
+    }
+
+    public float getBottomFlip() {
+        return bottomFlip;
+    }
+
+    public void setBottomFlip(float bottomFlip) {
+        this.bottomFlip = bottomFlip;
+        invalidate();
+    }
+
+    public float getFlipRotation() {
+        return flipRotation;
+    }
+
+    public void setFlipRotation(float flipRotation) {
+        this.flipRotation = flipRotation;
+        invalidate();
     }
 
     public cmAnimationRorateView(Context context) {
@@ -44,20 +75,29 @@ public class cmAnimationRorateView extends View {
         super.onDraw(canvas);
 
         canvas.save();
-        canvas.translate((getWidth()/2),(getHeight()/2));
-        canvas.clipRect(-  mBitmap.getWidth()/2,- mBitmap.getHeight()/2,mBitmap.getWidth()/2,0);
-        canvas.translate(-(getWidth()/2),-(getHeight()/2));
-        canvas.drawBitmap(mBitmap,getWidth()/2 -  mBitmap.getWidth()/2,getHeight()/2 - mBitmap.getHeight()/2,mPaint);
+        canvas.translate((PADDING + IMAGE_WIDTH/2),(PADDING + IMAGE_WIDTH/2));
+        canvas.rotate(-flipRotation);
+        mCamera.save();
+        mCamera.rotateX(topFlip);
+        mCamera.applyToCanvas(canvas);
+        mCamera.restore();
+        canvas.clipRect(-  IMAGE_WIDTH,- IMAGE_WIDTH,IMAGE_WIDTH,0);
+        canvas.rotate(flipRotation);
+        canvas.translate(-(PADDING + IMAGE_WIDTH/2),-(PADDING + IMAGE_WIDTH/2));
+        canvas.drawBitmap(mBitmap,PADDING,PADDING,mPaint);
         canvas.restore();
 
-
-
         canvas.save();
-        canvas.translate((getWidth()/2),(getHeight()/2));
+        canvas.translate((PADDING + IMAGE_WIDTH/2),(PADDING + IMAGE_WIDTH/2));
+        canvas.rotate(-flipRotation);
+        mCamera.save();
+        mCamera.rotateX(bottomFlip);
         mCamera.applyToCanvas(canvas);
-        canvas.clipRect( -  mBitmap.getWidth()/2,0,mBitmap.getWidth()/2,mBitmap.getHeight()/2);
-        canvas.translate(-(getWidth()/2),-(getHeight()/2));
-        canvas.drawBitmap(mBitmap,getWidth()/2 -  mBitmap.getWidth()/2,getHeight()/2 - mBitmap.getHeight()/2,mPaint);
+        mCamera.restore();
+        canvas.clipRect( - IMAGE_WIDTH,0,IMAGE_WIDTH,IMAGE_WIDTH);
+        canvas.rotate(flipRotation);
+        canvas.translate(-(PADDING + IMAGE_WIDTH/2),-(PADDING + IMAGE_WIDTH/2));
+        canvas.drawBitmap(mBitmap,PADDING,PADDING,mPaint);
         canvas.restore();
     }
 }

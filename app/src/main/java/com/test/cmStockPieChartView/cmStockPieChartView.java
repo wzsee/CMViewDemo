@@ -26,7 +26,7 @@ public class cmStockPieChartView extends View {
     //起始角度值
     private int currentAngle = 270;
     //每块扇形所对应的角度
-    private int[] angles = {60,120,120,60};
+    private int[] angles = {90,90,120,60};
     //每块扇形所对应的颜色
     private int[] colors = {Color.parseColor("#ea0200"),Color.parseColor("#f96362"),Color.parseColor("#85c263"),Color.parseColor("#5e9e3e")};
 
