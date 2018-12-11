@@ -15,6 +15,7 @@ import com.test.cmAvatarView.CMAvatarView;
 import com.test.cmAvatarView.CMAvatarViewActivity;
 import com.test.cmDashView.CMDashBoardActivity;
 import com.test.cmMaterialDesign.CMMaterialDesionDemoActivity;
+import com.test.cmMaterialEditText.CMMaterialEditTextActivity;
 import com.test.cmPieChartView.CMPieChartView;
 import com.test.cmPieChartView.CMPieChartViewActivity;
 import com.test.cmQQSlidingMenuView.CMQQSlidingMenuActivity;
@@ -75,6 +76,8 @@ public class MainActivity extends AppCompatActivity {
         startCMImageTextViewActivity();
 
         startCMAnimationRotateActivity();
+
+        startCMMaterialEditTextActivity();
 
     }
 
@@ -385,9 +388,9 @@ public class MainActivity extends AppCompatActivity {
      */
     private void startCMImageTextViewActivity() {
 
-        Button cmStockPieChartViewDemo = (Button)findViewById(R.id.main_cmtextview_image_bt);
+        Button cmImageTextViewDemo = (Button)findViewById(R.id.main_cmtextview_image_bt);
 
-        cmStockPieChartViewDemo.setOnClickListener(new View.OnClickListener() {
+        cmImageTextViewDemo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
@@ -403,13 +406,31 @@ public class MainActivity extends AppCompatActivity {
      */
     private void startCMAnimationRotateActivity() {
 
-        Button cmStockPieChartViewDemo = (Button)findViewById(R.id.main_cmanimation_rorate_bt);
+        Button cmAnimationDemo = (Button)findViewById(R.id.main_cmanimation_rorate_bt);
 
-        cmStockPieChartViewDemo.setOnClickListener(new View.OnClickListener() {
+        cmAnimationDemo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, CMAnimationRorateActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+
+    /**
+     * @info 仿写MaterialEditText Float EditText
+     */
+    private void startCMMaterialEditTextActivity() {
+
+        Button cmMaterialEditTextDemo = (Button)findViewById(R.id.main_cmmaterial_edittext_bt);
+
+        cmMaterialEditTextDemo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, CMMaterialEditTextActivity.class);
                 startActivity(intent);
             }
         });

@@ -45,16 +45,16 @@ public class cmAnimationRorateView extends View {
 
         canvas.save();
         canvas.translate((getWidth()/2),(getHeight()/2));
-
         canvas.clipRect(-  mBitmap.getWidth()/2,- mBitmap.getHeight()/2,mBitmap.getWidth()/2,0);
         canvas.translate(-(getWidth()/2),-(getHeight()/2));
         canvas.drawBitmap(mBitmap,getWidth()/2 -  mBitmap.getWidth()/2,getHeight()/2 - mBitmap.getHeight()/2,mPaint);
         canvas.restore();
 
+
+
         canvas.save();
         canvas.translate((getWidth()/2),(getHeight()/2));
         mCamera.applyToCanvas(canvas);
-
         canvas.clipRect( -  mBitmap.getWidth()/2,0,mBitmap.getWidth()/2,mBitmap.getHeight()/2);
         canvas.translate(-(getWidth()/2),-(getHeight()/2));
         canvas.drawBitmap(mBitmap,getWidth()/2 -  mBitmap.getWidth()/2,getHeight()/2 - mBitmap.getHeight()/2,mPaint);
