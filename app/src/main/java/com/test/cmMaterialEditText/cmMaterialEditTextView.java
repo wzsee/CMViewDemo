@@ -2,9 +2,11 @@ package com.test.cmMaterialEditText;
 
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.DashPathEffect;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.support.v7.widget.AppCompatEditText;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -12,6 +14,7 @@ import android.text.TextWatcher;
 import android.util.AttributeSet;
 
 import com.test.cmUtils.DpToPxUtil;
+import com.test.cmviewdemo.R;
 
 public class cmMaterialEditTextView extends AppCompatEditText {
 
@@ -27,11 +30,9 @@ public class cmMaterialEditTextView extends AppCompatEditText {
 
     boolean floatingLabelShown = false;
     float floatingLabelFraction;
-
     public float getFloatingLabelFraction() {
         return floatingLabelFraction;
     }
-
     public void setFloatingLabelFraction(float floatingLabelFraction) {
         this.floatingLabelFraction = floatingLabelFraction;
         invalidate();
@@ -40,35 +41,25 @@ public class cmMaterialEditTextView extends AppCompatEditText {
     //画笔
     private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
-    {
-        //设置Padding
-        setPadding(getPaddingLeft(),(int) (getPaddingTop() + TEXT_SIZE + TEXT_MARGIN),getPaddingRight(),getPaddingBottom());
-        mPaint.setTextSize(TEXT_SIZE);
 
-        addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+    //是否使用Floating Label
+    boolean userFloatingLabel;
+    Rect rectBackground = new Rect();
 
-            }
+    public void setUserFloatingLabel(boolean userFloatingLabel){
+        if(this.userFloatingLabel != userFloatingLabel){
+            this.userFloatingLabel = userFloatingLabel;
+            onUserFloationgLabel();
+        }
+    }
 
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-                //隐藏
-                if(floatingLabelShown && TextUtils.isEmpty(s)){
-                    getAnimator().reverse();
-                    floatingLabelShown = false;
-                }else if(!floatingLabelShown && !TextUtils.isEmpty(s)){
-                    getAnimator().start();
-                    floatingLabelShown = true;
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
+    private void onUserFloationgLabel(){
+        getBackground().getPadding(rectBackground);
+        if(userFloatingLabel){
+            setPadding(rectBackground.left,(int) (rectBackground.top + TEXT_SIZE + TEXT_MARGIN),rectBackground.right,rectBackground.bottom);
+        }else{
+            setPadding(rectBackground.left,rectBackground.top,rectBackground.right,rectBackground.bottom);
+        }
     }
 
     private ObjectAnimator getAnimator() {
@@ -84,10 +75,51 @@ public class cmMaterialEditTextView extends AppCompatEditText {
 
     public cmMaterialEditTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
+
+        initMaterialEditTextView(context,attrs);
     }
 
     public cmMaterialEditTextView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+    }
+
+    private void initMaterialEditTextView(Context context, AttributeSet attrs) {
+
+        TypedArray typedArray = context.obtainStyledAttributes(attrs,R.styleable.cmMaterialEditTextView);
+        userFloatingLabel = typedArray.getBoolean(R.styleable.cmMaterialEditTextView_cmMaterialEditTextViewUserFloating,true);
+        typedArray.recycle();
+
+        mPaint.setTextSize(TEXT_SIZE);
+
+        //设置Padding
+        onUserFloationgLabel();
+
+        addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                if(userFloatingLabel){
+                    //隐藏
+                    if(floatingLabelShown && TextUtils.isEmpty(s)){
+                        getAnimator().reverse();
+                        floatingLabelShown = false;
+                    }else if(!floatingLabelShown && !TextUtils.isEmpty(s)){
+                        getAnimator().start();
+                        floatingLabelShown = true;
+                    }
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
 
     @Override

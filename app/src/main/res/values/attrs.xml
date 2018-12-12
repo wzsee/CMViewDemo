@@ -55,4 +55,9 @@
         <attr name="cmQQSlidingMenuRightMargin" format="dimension"></attr>
     </declare-styleable>
 
+    <!--仿cmMaterialEditTextView-->
+    <declare-styleable name="cmMaterialEditTextView">
+        <attr name="cmMaterialEditTextViewUserFloating" format="boolean"></attr>
+    </declare-styleable>
+
 </resources>

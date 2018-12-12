@@ -16,6 +16,7 @@
     <com.test.cmMaterialEditText.cmMaterialEditTextView
         android:id="@+id/cm_material_edittext"
         android:textSize="30sp"
+        app:cmMaterialEditTextViewUserFloating="false"
         android:hint="CMMaterialEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
