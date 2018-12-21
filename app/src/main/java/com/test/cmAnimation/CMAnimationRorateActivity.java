@@ -34,18 +34,18 @@ public class CMAnimationRorateActivity extends AppCompatActivity {
                 ObjectAnimator topFlipAnimator = ObjectAnimator.ofFloat(mSunView, "topFlip", - 45);
                 topFlipAnimator.setDuration(1500);
 
-        AnimatorSet animatorSet = new AnimatorSet();
-        animatorSet.playSequentially(bottomFlipAnimator, flipRotationAnimator, topFlipAnimator);
-        animatorSet.setStartDelay(1000);
-        animatorSet.start();
+//        AnimatorSet animatorSet = new AnimatorSet();
+//        animatorSet.playSequentially(bottomFlipAnimator, flipRotationAnimator, topFlipAnimator);
+//        animatorSet.setStartDelay(1000);
+//        animatorSet.start();
 
-//                PropertyValuesHolder bottomFlipHolder = PropertyValuesHolder.ofFloat("bottomFlip", 45);
-//                PropertyValuesHolder flipRotationHolder = PropertyValuesHolder.ofFloat("flipRotation", 270);
-//                PropertyValuesHolder topFlipHolder = PropertyValuesHolder.ofFloat("topFlip", - 45);
-//                ObjectAnimator objectAnimator = ObjectAnimator.ofPropertyValuesHolder(mSunView, bottomFlipHolder, flipRotationHolder, topFlipHolder);
-//                objectAnimator.setStartDelay(1000);
-//                objectAnimator.setDuration(2000);
-//                objectAnimator.start();
+                PropertyValuesHolder bottomFlipHolder = PropertyValuesHolder.ofFloat("bottomFlip", 45);
+                PropertyValuesHolder flipRotationHolder = PropertyValuesHolder.ofFloat("flipRotation", 270);
+                PropertyValuesHolder topFlipHolder = PropertyValuesHolder.ofFloat("topFlip", - 45);
+                ObjectAnimator objectAnimator = ObjectAnimator.ofPropertyValuesHolder(mSunView, bottomFlipHolder, flipRotationHolder, topFlipHolder);
+                objectAnimator.setStartDelay(1000);
+                objectAnimator.setDuration(2000);
+                objectAnimator.start();
             }
         });
 

@@ -34,7 +34,8 @@
         <activity android:name="com.test.cmStockPieChartView.CMStockPieChartViewActivity" />
         <activity android:name="com.test.cmTextView.CMImageTextViewActivity" />
         <activity android:name="com.test.cmAnimation.CMAnimationRorateActivity" />
-        <activity android:name="com.test.cmMaterialEditText.CMMaterialEditTextActivity"></activity>
+        <activity android:name="com.test.cmMaterialEditText.CMMaterialEditTextActivity" />
+        <activity android:name="com.test.cmScalableImage.CMScalableActivity"></activity>
     </application>
 
 </manifest>

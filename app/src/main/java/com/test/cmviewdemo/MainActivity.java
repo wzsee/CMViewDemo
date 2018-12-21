@@ -19,6 +19,7 @@ import com.test.cmMaterialEditText.CMMaterialEditTextActivity;
 import com.test.cmPieChartView.CMPieChartView;
 import com.test.cmPieChartView.CMPieChartViewActivity;
 import com.test.cmQQSlidingMenuView.CMQQSlidingMenuActivity;
+import com.test.cmScalableImage.CMScalableActivity;
 import com.test.cmSlidingMenuView.CMSlidingMenuActivity;
 import com.test.cmStockPieChartView.CMStockPieChartViewActivity;
 import com.test.cmTextView.CMImageTextViewActivity;
@@ -79,8 +80,9 @@ public class MainActivity extends AppCompatActivity {
 
         startCMMaterialEditTextActivity();
 
-    }
+        startCMScalableImageActivity();
 
+    }
 
 
     private void initViewPager() {
@@ -431,6 +433,24 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, CMMaterialEditTextActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+
+    /**
+     * @info 双向滑动
+     */
+    private void startCMScalableImageActivity() {
+
+        Button cmScalableDemo = (Button)findViewById(R.id.main_cmscalable_image_bt);
+
+        cmScalableDemo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, CMScalableActivity.class);
                 startActivity(intent);
             }
         });

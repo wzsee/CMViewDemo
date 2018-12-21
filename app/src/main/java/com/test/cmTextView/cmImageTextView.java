@@ -15,10 +15,10 @@ import com.test.cmviewdemo.R;
 public class cmImageTextView extends View {
 
     //图像宽度
-    private static final float IMAGE_WIDTH = DpToPxUtil.dp2px(160);
+    private static final float IMAGE_WIDTH = DpToPxUtil.dp2px(120);
 
-    private static final float IMAGE_OFFSET = DpToPxUtil.dp2px(0);
-    private static final float IMAGE_LEFT = DpToPxUtil.dp2px(0);
+    private static final float IMAGE_OFFSET = DpToPxUtil.dp2px(50);
+    private static final float IMAGE_LEFT = DpToPxUtil.dp2px(45);
 
     //创建画笔
     private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
