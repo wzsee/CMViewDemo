@@ -14,6 +14,7 @@ import com.test.cmAnimation.CMAnimationRorateActivity;
 import com.test.cmAvatarView.CMAvatarView;
 import com.test.cmAvatarView.CMAvatarViewActivity;
 import com.test.cmDashView.CMDashBoardActivity;
+import com.test.cmMaiMaiImage.CMMaiMaiImageActivity;
 import com.test.cmMaterialDesign.CMMaterialDesionDemoActivity;
 import com.test.cmMaterialEditText.CMMaterialEditTextActivity;
 import com.test.cmPieChartView.CMPieChartView;
@@ -82,7 +83,10 @@ public class MainActivity extends AppCompatActivity {
 
         startCMScalableImageActivity();
 
+        startCMMaiMaiImageActivity();
+
     }
+
 
 
     private void initViewPager() {
@@ -451,6 +455,24 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, CMScalableActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+
+    /**
+     * @info 仿脉脉职言图片效果
+     */
+    private void startCMMaiMaiImageActivity() {
+
+        Button cmMaiMaiImageDemo = (Button)findViewById(R.id.main_cm_maimai_image_bt);
+
+        cmMaiMaiImageDemo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, CMMaiMaiImageActivity.class);
                 startActivity(intent);
             }
         });

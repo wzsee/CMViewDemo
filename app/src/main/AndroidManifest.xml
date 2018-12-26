@@ -35,7 +35,8 @@
         <activity android:name="com.test.cmTextView.CMImageTextViewActivity" />
         <activity android:name="com.test.cmAnimation.CMAnimationRorateActivity" />
         <activity android:name="com.test.cmMaterialEditText.CMMaterialEditTextActivity" />
-        <activity android:name="com.test.cmScalableImage.CMScalableActivity"></activity>
+        <activity android:name="com.test.cmScalableImage.CMScalableActivity" />
+        <activity android:name="com.test.cmMaiMaiImage.CMMaiMaiImageActivity"></activity>
     </application>
 
 </manifest>
